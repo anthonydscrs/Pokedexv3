@@ -1,0 +1,29 @@
+.buttonContent,
+.buttonContentShiny {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 0.25rem;
+  padding: 0.15rem;
+  font-size: smaller;
+  background-image: url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/shiny-charm.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 25px;
+}
+
+.buttonContentShiny {
+  border: 1px solid;
+  border-color: var(--darkRed);
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .buttonContent,
+  .buttonContentShiny {
+    height: 2.8rem;
+    width: 2.8rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+    background-size: 30px;
+  }
+}

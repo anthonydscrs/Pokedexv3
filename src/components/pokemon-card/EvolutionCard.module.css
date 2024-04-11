@@ -1,0 +1,41 @@
+.evolutionCardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.preEvolutionContainer,
+.evolutionContainer {
+  margin: 2rem 1rem;
+  height: 8.75rem;
+  width: 8.75rem;
+}
+
+.evolutionCardTitle {
+  margin-top: 0.625rem;
+}
+
+.evolutionImg {
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 50%;
+  border: 1px solid;
+  border-color: var(--mediumGrey);
+  padding: 1rem;
+}
+
+.evolutionImg:hover {
+  border-color: var(--darkRed);
+}
+
+.evolutionName {
+  padding-top: 0.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.evolutionName span {
+  font-weight: 600;
+}

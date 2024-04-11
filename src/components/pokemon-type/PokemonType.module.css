@@ -1,0 +1,55 @@
+.indexContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.buttonContainer {
+  height: 6.5rem;
+  width: 100%;
+  border: 1px solid;
+  border-color: var(--mediumGrey);
+  background-color: #982c2c;
+}
+
+.buttonContainer > img {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+.buttonContainer:hover {
+  transform: scale(1.02);
+  background-color: #f3d9d9;
+}
+
+.buttonContainer:hover p {
+  color: #982c2c;
+}
+
+.pokemonName {
+  color: #f3d9d9;
+  font-size: 0.5rem;
+  font-weight: 600;
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .indexContainer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+  }
+
+  .buttonContainer {
+    height: 8rem;
+  }
+
+  .buttonContainer > img {
+    height: 5rem;
+    width: 5rem;
+  }
+
+  .pokemonName {
+    font-size: 0.85rem;
+  }
+}

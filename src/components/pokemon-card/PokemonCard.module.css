@@ -1,0 +1,398 @@
+.detailsContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--darkGrey);
+}
+
+.pokemonInfos {
+  width: 100%;
+  height: 30rem;
+  border: 1px solid;
+  border-color: var(--mediumGrey);
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background-color: var(--white);
+}
+
+.pokemonCard {
+  border: 1px solid;
+  border-color: var(--mediumGrey);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  width: 100%;
+}
+
+.pokemonImg {
+  height: 9rem;
+  width: 9rem;
+  padding: 0.25rem;
+}
+
+.pokemonStatsContainer {
+  padding: 0.25rem;
+  text-align: center;
+}
+
+.pokemonStats {
+  font-size: small;
+  font-weight: 400;
+}
+
+.pokemonStats span {
+  font-weight: 600;
+}
+
+.pokemonStats:first-of-type {
+  margin-bottom: 0.3rem;
+}
+
+.isSteel span {
+  color: #94a0b1;
+}
+
+.isDark span {
+  color: #606060;
+}
+
+.isDragon span {
+  color: #e0ab5b;
+}
+
+.isIce span {
+  color: #a9e3e8;
+}
+
+.isGhost span {
+  color: #776b93;
+}
+
+.isRock span {
+  color: #47433c;
+}
+
+.isPsy span {
+  color: #48464a;
+}
+
+.isFighting span {
+  color: #8c7674;
+}
+
+.isGround span {
+  color: #9b8565;
+}
+
+.isFairy span {
+  color: #f3b9b9;
+}
+
+.isElectric span {
+  color: #dd9f3b;
+}
+
+.isPoison span {
+  color: #887aa6;
+}
+
+.isNormal span {
+  color: #cfba92;
+}
+
+.isFlying span {
+  color: #cfba92;
+}
+
+.isBug span {
+  color: #9cca5c;
+}
+
+.isWater span {
+  color: #5888c8;
+}
+
+.isFire span {
+  color: #f49338;
+}
+
+.isGrass span {
+  color: #78b735;
+}
+
+.isSteel {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #94a0b1);
+  border-top-right-radius: 0.5rem;
+}
+
+.isDark {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #606060);
+  border-top-right-radius: 0.5rem;
+}
+
+.isDragon {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #e0ab5b);
+  border-top-right-radius: 0.5rem;
+}
+
+.isIce {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #a9e3e8);
+  border-top-right-radius: 0.5rem;
+}
+
+.isGhost {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #776b93);
+  border-top-right-radius: 0.5rem;
+}
+
+.isRock {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #47433c);
+  border-top-right-radius: 0.5rem;
+}
+
+.isPsy {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #48464a);
+  border-top-right-radius: 0.5rem;
+}
+
+.isFighting {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #8c7674);
+  border-top-right-radius: 0.5rem;
+}
+
+.isGround {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #9b8565);
+  border-top-right-radius: 0.5rem;
+}
+
+.isFairy {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #f3b9b9);
+  border-top-right-radius: 0.5rem;
+}
+
+.isElectric {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #dd9f3b);
+  border-top-right-radius: 0.5rem;
+}
+
+.isPoison {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #887aa6);
+  border-top-right-radius: 0.5rem;
+}
+
+.isNormal {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #cfba92);
+  border-top-right-radius: 0.5rem;
+}
+
+.isFlying {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #cfba92);
+  border-top-right-radius: 0.5rem;
+}
+
+.isBug {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #9cca5c);
+  border-top-right-radius: 0.5rem;
+}
+
+.isWater {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #5888c8);
+  border-top-right-radius: 0.5rem;
+}
+
+.isFire {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #f49338);
+  border-top-right-radius: 0.5rem;
+}
+
+.isGrass {
+  height: 58%;
+  background: linear-gradient(to left, var(--white), #78b735);
+  border-top-right-radius: 0.5rem;
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .detailsContainer {
+    flex-direction: row-reverse;
+    gap: 1rem;
+  }
+
+  .pokemonInfos {
+    border-top-left-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0;
+    height: auto;
+  }
+
+  .infoCard {
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .pokemonCard {
+    border-top-right-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+  }
+
+  .cardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .pokemonImg {
+    height: 23rem;
+    width: 23rem;
+  }
+
+  .pokemonStats {
+    font-size: medium;
+  }
+
+  .pokemonStats:first-of-type {
+    margin: 0.2rem 0 0.8rem;
+  }
+
+  .pokemonStats {
+    margin-bottom: 0.1rem;
+  }
+
+  .isSteel {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #94a0b1);
+    border-top-right-radius: 0.5rem;
+  }
+
+  .isDark {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #606060);
+    border-top-right-radius: 0.5rem;
+  }
+
+  .isDragon {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #e0ab5b);
+    border-top-right-radius: 0.5rem;
+  }
+
+  .isIce {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #a9e3e8);
+    border-top-right-radius: 0.5rem;
+  }
+
+  .isGhost {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #776b93);
+    border-top-right-radius: 0.5rem;
+  }
+
+  .isRock {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #47433c);
+    border-top-right-radius: 0.5rem;
+  }
+
+  .isPsy {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #48464a);
+    border-top-right-radius: 0.5rem;
+  }
+
+  .isFighting {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #8c7674);
+    border-top-right-radius: 0.5rem;
+  }
+
+  .isGround {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #9b8565);
+    border-top-right-radius: 0.5rem;
+  }
+
+  .isFairy {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #f3b9b9);
+    border-top-right-radius: 0.5rem;
+  }
+
+  .isElectric {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #dd9f3b);
+    border-top-right-radius: 0.5rem;
+  }
+
+  .isPoison {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #887aa6);
+    border-top-right-radius: 0.5rem;
+  }
+
+  .isNormal {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #cfba92);
+    border-top-right-radius: 0.5rem;
+  }
+
+  .isFlying {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #cfba92);
+    border-top-right-radius: 0.5rem;
+  }
+
+  .isBug {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #9cca5c);
+    border-top-right-radius: 0.5rem;
+  }
+
+  .isWater {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #5888c8);
+    border-top-right-radius: 0.5rem;
+  }
+
+  .isFire {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #f49338);
+    border-top-right-radius: 0.5rem;
+  }
+
+  .isGrass {
+    height: 100%;
+    background: linear-gradient(0deg, var(--white), #78b735);
+    border-top-right-radius: 0.5rem;
+  }
+}

@@ -1,0 +1,144 @@
+.indexContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.buttonContainer {
+  height: 6.5rem;
+  width: 100%;
+  border: 1px solid;
+  border-color: var(--mediumGrey);
+}
+
+.buttonContainer > img {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+.buttonContainer:hover {
+  transform: scale(1.02);
+  background-color: #f3d9d9;
+}
+
+.buttonContainer:hover p {
+  color: #982c2c;
+}
+
+.pokemonName {
+  color: black;
+  font-size: 0.5rem;
+  font-weight: 600;
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .indexContainer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+  }
+
+  .buttonContainer {
+    height: 8rem;
+  }
+
+  .buttonContainer > img {
+    height: 5rem;
+    width: 5rem;
+  }
+
+  .pokemonName {
+    font-size: 0.85rem;
+  }
+}
+
+.isSteel {
+  background: linear-gradient(to left, var(--white), #94a0b1);
+  border-top-right-radius: 0.5rem;
+}
+
+.isDark {
+  background: linear-gradient(to left, var(--white), #606060);
+  border-top-right-radius: 0.5rem;
+}
+
+.isDragon {
+  background: linear-gradient(to left, var(--white), #e0ab5b);
+  border-top-right-radius: 0.5rem;
+}
+
+.isIce {
+  background: linear-gradient(to left, var(--white), #a9e3e8);
+  border-top-right-radius: 0.5rem;
+}
+
+.isGhost {
+  background: linear-gradient(to left, var(--white), #776b93);
+  border-top-right-radius: 0.5rem;
+}
+
+.isRock {
+  background: linear-gradient(to left, var(--white), #47433c);
+  border-top-right-radius: 0.5rem;
+}
+
+.isPsy {
+  background: linear-gradient(to left, var(--white), #48464a);
+  border-top-right-radius: 0.5rem;
+}
+
+.isFighting {
+  background: linear-gradient(to left, var(--white), #8c7674);
+  border-top-right-radius: 0.5rem;
+}
+
+.isGround {
+  background: linear-gradient(to left, var(--white), #9b8565);
+  border-top-right-radius: 0.5rem;
+}
+
+.isFairy {
+  background: linear-gradient(to left, var(--white), #f3b9b9);
+  border-top-right-radius: 0.5rem;
+}
+
+.isElectric {
+  background: linear-gradient(to left, var(--white), #dd9f3b);
+  border-top-right-radius: 0.5rem;
+}
+
+.isPoison {
+  background: linear-gradient(to left, var(--white), #887aa6);
+  border-top-right-radius: 0.5rem;
+}
+
+.isNormal {
+  background: linear-gradient(to left, var(--white), #cfba92);
+  border-top-right-radius: 0.5rem;
+}
+
+.isFlying {
+  background: linear-gradient(to left, var(--white), #cfba92);
+  border-top-right-radius: 0.5rem;
+}
+
+.isBug {
+  background: linear-gradient(to left, var(--white), #9cca5c);
+  border-top-right-radius: 0.5rem;
+}
+
+.isWater {
+  background: linear-gradient(to left, var(--white), #5888c8);
+  border-top-right-radius: 0.5rem;
+}
+
+.isFire {
+  background: linear-gradient(to left, var(--white), #f49338);
+  border-top-right-radius: 0.5rem;
+}
+
+.isGrass {
+  background: linear-gradient(to left, var(--white), #78b735);
+  border-top-right-radius: 0.5rem;
+}

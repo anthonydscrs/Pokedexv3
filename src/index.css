@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --white: rgb(248, 248, 248);
+  --lightGrey: rgb(230, 230, 230);
+  --mediumRed: rgb(193, 64, 64);
+  --mediumGrey: rgb(210, 210, 210);
+  --darkGrey: rgb(128, 128, 128);
+  --lightRed: rgb(243, 86, 86);
+  --darkRed: rgb(197, 31, 31);
+  --black: rgb(2, 2, 2);
+}
+
+html {
+  scrollbar-width: none;
+  background-color: var(--mediumRed);
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
