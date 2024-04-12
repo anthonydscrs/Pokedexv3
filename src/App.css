@@ -313,7 +313,8 @@ a:visited {
 }
 
 .areas-header,
-.card-header {
+.card-header,
+.index-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -473,7 +474,8 @@ a:visited {
   }
 
   .areas-header,
-  .card-header {
+  .card-header,
+  .index-header {
     padding: 1rem;
     border-radius: 0.8rem;
   }

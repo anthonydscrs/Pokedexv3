@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import PokemonType from "../components/pokemon-type/PokemonType";
@@ -8,10 +8,6 @@ import PokemonType from "../components/pokemon-type/PokemonType";
 interface Pokemon {
   id: number;
   name: string;
-}
-
-interface PokemonsTypeResponse {
-  data: Pokemon[];
 }
 
 interface Params {
@@ -27,16 +23,18 @@ const PokemonIndex: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get<PokemonsTypeResponse>(
-        `https://pokebuildapi.fr/api/v1/pokemon/type/${type}`
-      )
-      .then((query: AxiosResponse<PokemonsTypeResponse>) => {
-        setPokemonsType(query.data.data);
+      .get(`https://pokebuildapi.fr/api/v1/pokemon/type/${type}`)
+      .then((query) => {
+        setPokemonsType(query.data);
       })
       .catch((err) => {
-        if (err.response?.status === 404) navigate("/pokedex/not-found");
+        if (err.response.status === 404) navigate("/pokedex/not-found");
       });
   }, [type, navigate]);
+
+  const formattedType = type
+    ? type.charAt(0).toUpperCase() + type.slice(1)
+    : "";
 
   if (!pokemonsType) return null;
   return (
@@ -46,7 +44,7 @@ const PokemonIndex: React.FC = () => {
       <div className="dummy-header" />
       <div className="index-content">
         <div className="index-header">
-          <h3 className="index-title">{`${type}`}</h3>
+          <h3 className="index-title">{`${formattedType}`}</h3>
         </div>
         {/* Assurez-vous de passer la prop pokemonsType */}
         <PokemonType pokemonsType={pokemonsType} />
