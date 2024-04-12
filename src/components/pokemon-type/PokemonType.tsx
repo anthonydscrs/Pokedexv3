@@ -10,10 +10,9 @@ interface Pokemon {
 
 interface Props {
   pokemonsType: Pokemon[];
-  shiny: boolean;
 }
 
-const PokemonType: React.FC<Props> = ({ pokemonsType, shiny }) => {
+const PokemonType: React.FC<Props> = ({ pokemonsType }) => {
   return (
     <div className={styles.indexContainer}>
       {pokemonsType.map((pokemon) => (
@@ -24,11 +23,7 @@ const PokemonType: React.FC<Props> = ({ pokemonsType, shiny }) => {
             className={styles.buttonContainer}
           >
             <img
-              src={
-                shiny
-                  ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokemon.id}.png`
-                  : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`
-              }
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
               alt={pokemon.name}
             />
             <p className={styles.pokemonName}>
@@ -43,7 +38,6 @@ const PokemonType: React.FC<Props> = ({ pokemonsType, shiny }) => {
 
 PokemonType.propTypes = {
   pokemonsType: PropTypes.array.isRequired,
-  shiny: PropTypes.bool.isRequired,
 };
 
 export default PokemonType;

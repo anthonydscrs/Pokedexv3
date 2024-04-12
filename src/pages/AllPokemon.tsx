@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import PokemonList from "../components/pokemon-list/PokemonList";
 import Loading from "../components/loading/Loading";
@@ -11,16 +11,16 @@ interface Pokemon {
   name: string;
 }
 
-const PokemonByGeneration: React.FC = () => {
-  const { area } = useParams();
+const AllPokemon: React.FC = () => {
   const [pokemonsList, setPokemonsList] = useState<Pokemon[] | null>(null);
+  const [searchTerm, setSearchTerm] = useState<string>("");
   const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     setIsLoaded(false);
     axios
-      .get(`https://pokebuildapi.fr/api/v1/pokemon/generation/${area}`)
+      .get(`https://pokebuildapi.fr/api/v1/pokemon/`)
       .then((query) => {
         if (query.data.length > 0) {
           setPokemonsList(query.data);
@@ -32,7 +32,18 @@ const PokemonByGeneration: React.FC = () => {
       })
       .finally(() => setIsLoaded(!isLoaded));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [area, navigate]);
+  }, [navigate]);
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+  };
+
+  let filteredPokemonList: Pokemon[] = [];
+  if (pokemonsList) {
+    filteredPokemonList = pokemonsList.filter((pokemon) =>
+      pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
 
   if (!pokemonsList) return <Loading />;
   return (
@@ -41,13 +52,18 @@ const PokemonByGeneration: React.FC = () => {
       <Header />
       <div className="dummy-header" />
       <div className="index-content">
-        <div className="index-header">
-          <h3 className="index-title">{`Génération ${area}`}</h3>
+        <div className="input-container">
+          <input
+            type="text"
+            placeholder="Rechercher un Pokémon"
+            value={searchTerm}
+            onChange={handleSearchChange}
+          />
         </div>
-        <PokemonList pokemonsList={pokemonsList} />
+        <PokemonList pokemonsList={filteredPokemonList} />
       </div>
     </div>
   );
 };
 
-export default PokemonByGeneration;
+export default AllPokemon;

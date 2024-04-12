@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Bangers&display=swap");
 
+@font-face {
+  font-family: "PokemonHollow";
+  src: url("../public/PokemonHollow.ttf") format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -123,6 +128,27 @@ button:active {
   }
 }
 
+/* NavBar */
+
+.navbar-container {
+  position: fixed;
+  height: 3.2rem;
+  width: 100dvw;
+  background-color: #332c2c;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.dummy-header {
+  height: 4.8rem;
+  width: 100dvw;
+  padding: 1rem;
+}
+
 /* Header (z-index 1) */
 .header-container {
   position: fixed;
@@ -137,6 +163,21 @@ button:active {
   align-items: center;
   padding: 1rem;
   z-index: 1;
+}
+
+.website {
+  font-family: PokemonHollow;
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit; /* Pour hériter de la couleur du texte parent */
 }
 
 .left-links {
@@ -168,20 +209,20 @@ button:active {
 }
 
 .id-button {
-  height: 3.8rem;
-  width: 3.8rem;
+  height: 2rem;
+  width: 2rem;
   margin-right: 10px;
 }
 
 .random-button {
-  height: 1.8rem;
-  width: 1.8rem;
+  height: 2rem;
+  width: 2rem;
   margin-right: 10px;
 }
 
 .help-button {
-  height: 1.8rem;
-  width: 1.8rem;
+  height: 2rem;
+  width: 2rem;
   margin-right: 10px;
 }
 
@@ -261,12 +302,6 @@ button:active {
   height: 100dvh;
 }
 
-/* .dummy-header {
-  height: 4.8rem;
-  width: 100dvw;
-  padding: 1rem;
-} */
-
 .areas-content,
 .index-content,
 .card-content {
@@ -278,8 +313,8 @@ button:active {
 }
 
 .areas-header,
-.index-header,
-.card-header {
+.card-header,
+.index-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -290,6 +325,46 @@ button:active {
   border-color: var(--mediumGrey);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  background-color: rgb(243, 217, 217);
+}
+.input-container {
+  background-color: rgb(243, 217, 217);
+  border-radius: 20px;
+  padding: 8px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.input-container input {
+  border: none;
+  outline: none;
+  background: none;
+  flex: 1;
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 16px;
+}
+
+.input-container input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.input-container button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+.input-container button:hover {
+  color: rgb(100, 100, 100);
+}
+
+/* Ajoutez ces styles pour la bordure */
+.input-container {
+  border: 2px solid rgb(200, 100, 100); /* Couleur de la bordure */
 }
 
 .areas-title,
@@ -348,12 +423,17 @@ button:active {
     justify-content: flex-end;
   }
 
+  .dummy-header {
+    height: 4.8rem;
+    width: 100%;
+  }
+
   .back-button,
   .world-button,
   .index-button,
   .id-button,
   .random-button {
-    margin-right: 1rem;
+    margin-right: 5rem;
   }
 
   .helping-box {
@@ -383,11 +463,6 @@ button:active {
     background-color: var(--mediumRed);
   }
 
-  /* .dummy-header {
-    height: 4.8rem;
-    width: 100%;
-  } */
-
   .areas-content,
   .index-content,
   .card-content {
@@ -399,8 +474,8 @@ button:active {
   }
 
   .areas-header,
-  .index-header,
-  .card-header {
+  .card-header,
+  .index-header {
     padding: 1rem;
     border-radius: 0.8rem;
   }
@@ -412,12 +487,13 @@ button:active {
     padding: 0 1rem;
     font-size: larger;
   }
-  .id-button {
-    height: 6rem;
-    width: 6rem;
-  }
+
   .random-button,
-  .help-button {
+  .help-button,
+  .id-button,
+  .index-button,
+  .back-button,
+  .world-button {
     height: 4rem;
     width: 4rem;
   }
