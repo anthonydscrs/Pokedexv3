@@ -17,9 +17,16 @@ interface Pokemon {
 interface Props {
   pokemonsList: Pokemon[];
   shiny?: boolean;
+  startIndex: number;
+  endIndex: number;
 }
 
-const PokemonList: React.FC<Props> = ({ pokemonsList, shiny }) => {
+const PokemonList: React.FC<Props> = ({
+  pokemonsList,
+  shiny,
+  startIndex,
+  endIndex,
+}) => {
   function setColorType(pokemon: Pokemon) {
     const getType = pokemon.apiTypes[1]
       ? pokemon.apiTypes[1].name
@@ -68,7 +75,7 @@ const PokemonList: React.FC<Props> = ({ pokemonsList, shiny }) => {
 
   return (
     <div className={styles.indexContainer}>
-      {pokemonsList.map((pokemon) => (
+      {pokemonsList.slice(startIndex, endIndex).map((pokemon) => (
         <Link key={pokemon.id} to={`/pokedex/${pokemon.id}/`}>
           <button
             key={pokemon.name}
