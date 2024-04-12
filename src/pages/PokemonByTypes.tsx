@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios, { AxiosResponse } from "axios";
 import Header from "../components/Header";
+import NavBar from "../components/NavBar";
 import PokemonType from "../components/pokemon-type/PokemonType";
 
 interface Pokemon {
@@ -15,6 +16,7 @@ interface PokemonsTypeResponse {
 
 interface Params {
   type: string;
+  [key: string]: string | undefined;
 }
 
 const PokemonIndex: React.FC = () => {
@@ -39,6 +41,7 @@ const PokemonIndex: React.FC = () => {
   if (!pokemonsType) return null;
   return (
     <div className="pokemon-index-page">
+      <NavBar />
       <Header />
       <div className="dummy-header" />
       <div className="index-content">

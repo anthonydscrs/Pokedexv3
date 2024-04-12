@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/Header";
+import NavBar from "../components/NavBar";
 import ButtonShiny from "../components/button-shiny/ButtonShiny";
 import PokemonCard from "../components/pokemon-card/PokemonCard";
 
@@ -48,6 +49,7 @@ export default function Pokemon(): JSX.Element {
 
   return (
     <div className="pokemon-page">
+      <NavBar />
       <div className="dummy-header" />
       <div className="card-content">
         <div className="card-header">

@@ -1,10 +1,12 @@
 import React from "react";
 import Generation from "../components/generation/Generation";
 import Header from "../components/Header";
+import NavBar from "../components/NavBar";
 
 const PokemonMap: React.FC = () => {
   return (
     <div className="world-page">
+      <NavBar />
       <Header />
       <div className="dummy-header" />
       <div className="areas-content">
