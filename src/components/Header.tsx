@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import metamorph from "../assets/metamorph.png";
+import metamorph from "../assets/meta.png";
 import unknown from "../assets/unknown.png";
 import poke from "../assets/poke.png";
-import map from "../assets/map.png";
+import map from "../assets/oldmap.png";
 import pokedex from "../assets/pokedex.png";
 import bags from "../assets/bags.png";
 import "../App.css";
@@ -20,13 +20,15 @@ export default function Header() {
 
   return (
     <div className="header-container">
-      <Link to="/pokedex/map">
-        <div className="poke_box">
-          <div className="pokeball">
-            <div className="pokeball__button"></div>
+      <div>
+        <Link to="/pokedex/map">
+          <div className="poke_box">
+            <div className="pokeball">
+              <div className="pokeball__button"></div>
+            </div>
           </div>
-        </div>
-      </Link>
+        </Link>
+      </div>
       <div className="left-links">
         <Link to={`/pokedex/${randomId}`}>
           <img src={poke} className="back-button" onClick={handleRandom} />
@@ -34,7 +36,7 @@ export default function Header() {
         <Link to="/pokedex/map">
           <img src={map} className="world-button" />
         </Link>
-        <Link to="/pokedex/index/1">
+        <Link to="/pokedex">
           <img src={pokedex} className="index-button" />
         </Link>
       </div>
@@ -44,10 +46,10 @@ export default function Header() {
           <img src={metamorph} className="id-button" />
         </Link>
         <Link to={`/pokedex/${randomId}`}>
-          <img src={unknown} className="random-button" onClick={handleRandom} />
+          <img src={bags} className="random-button" onClick={handleRandom} />
         </Link>
         <img
-          src={bags}
+          src={unknown}
           className="help-button"
           onClick={() => {
             setHelpIsActive(!helpIsActive);
