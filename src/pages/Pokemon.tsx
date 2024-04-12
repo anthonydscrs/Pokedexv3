@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import ButtonShiny from "../components/button-shiny/ButtonShiny";
 import PokemonCard from "../components/pokemon-card/PokemonCard";
+import Loading from "../components/loading/Loading";
 
 interface PokemonData {
   id: number;
@@ -25,12 +26,13 @@ export default function Pokemon(): JSX.Element {
   const { id } = useParams<{ id: string }>();
   const [pokemon, setPokemon] = useState<PokemonData | null>(null);
   const [shiny, setShiny] = useState<boolean>(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     if (id) {
-      // Check if id is truthy
+      setIsLoaded(false);
       axios
         .get(`https://pokebuildapi.fr/api/v1/pokemon/${id}`)
         .then((response) => {
@@ -40,12 +42,14 @@ export default function Pokemon(): JSX.Element {
           if (error.response && error.response.status === 404) {
             navigate("/pokedex/not-found");
           }
-        });
+        })
+        .finally(() => setIsLoaded(!isLoaded));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, navigate]);
 
   // Vérifier si le Pokémon est chargé avant de continuer
-  if (!pokemon) return <p>No Pokémon found.</p>;
+  if (!pokemon) return <Loading />;
 
   return (
     <div className="pokemon-page">

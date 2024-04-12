@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import PokemonList from "../components/pokemon-list/PokemonList";
+import Loading from "../components/loading/Loading";
 
 interface Pokemon {
   id: number;
@@ -13,10 +14,11 @@ interface Pokemon {
 const AllPokemon: React.FC = () => {
   const [pokemonsList, setPokemonsList] = useState<Pokemon[] | null>(null);
   const [searchTerm, setSearchTerm] = useState<string>("");
-
+  const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
+    setIsLoaded(false);
     axios
       .get(`https://pokebuildapi.fr/api/v1/pokemon/`)
       .then((query) => {
@@ -27,7 +29,9 @@ const AllPokemon: React.FC = () => {
       .catch((err) => {
         if (err.response && err.response.status === 404)
           navigate("/pokedex/not-found");
-      });
+      })
+      .finally(() => setIsLoaded(!isLoaded));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [navigate]);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,7 +45,7 @@ const AllPokemon: React.FC = () => {
     );
   }
 
-  if (!pokemonsList) return null;
+  if (!pokemonsList) return <Loading />;
   return (
     <div className="pokemon-index-page">
       <NavBar />

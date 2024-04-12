@@ -1,0 +1,37 @@
+.loadingContent {
+  margin: auto;
+  text-align: center;
+}
+
+.loadingTitle {
+  margin-bottom: 0.5rem;
+}
+
+.loadingTitle {
+  color: var(--black);
+}
+
+.loadingText {
+  font-style: italic;
+}
+
+.waitImg {
+  width: 10.3rem;
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .loadingTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .loadingText {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .waitImg {
+    width: 25.25rem;
+  }
+}
