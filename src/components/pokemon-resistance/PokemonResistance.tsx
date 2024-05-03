@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import styles from "./PokemonType.module.css";
+import styles from "./PokemonResistance.module.css";
 
 interface Type {
   name: string;
@@ -13,10 +13,10 @@ interface Pokemon {
 }
 
 interface Props {
-  pokemonsType: Pokemon[];
+  pokemonsResistance: Pokemon[];
 }
 
-const PokemonType: React.FC<Props> = ({ pokemonsType }) => {
+const PokemonResistance: React.FC<Props> = ({ pokemonsResistance }) => {
   function setColorType(pokemon: Pokemon) {
     const getType = pokemon.apiTypes[1]
       ? pokemon.apiTypes[1].name
@@ -64,7 +64,7 @@ const PokemonType: React.FC<Props> = ({ pokemonsType }) => {
   }
   return (
     <div className={styles.indexContainer}>
-      {pokemonsType.map((pokemon) => (
+      {pokemonsResistance.map((pokemon) => (
         <Link key={pokemon.id} to={`/pokedex/${pokemon.id}/`}>
           <button
             key={pokemon.name}
@@ -85,8 +85,8 @@ const PokemonType: React.FC<Props> = ({ pokemonsType }) => {
   );
 };
 
-PokemonType.propTypes = {
-  pokemonsType: PropTypes.array.isRequired,
+PokemonResistance.propTypes = {
+  pokemonsResistance: PropTypes.array.isRequired,
 };
 
-export default PokemonType;
+export default PokemonResistance;

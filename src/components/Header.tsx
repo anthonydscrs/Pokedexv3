@@ -45,8 +45,8 @@ export default function Header() {
         <Link to="/pokedex/types">
           <img src={metamorph} className="id-button" />
         </Link>
-        <Link to={`/pokedex/${randomId}`}>
-          <img src={bags} className="random-button" onClick={handleRandom} />
+        <Link to="/resistance">
+          <img src={bags} className="random-button" />
         </Link>
         <img
           src={unknown}
